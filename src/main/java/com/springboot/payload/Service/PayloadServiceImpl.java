@@ -6,9 +6,14 @@ import org.springframework.stereotype.Service;
 import com.springboot.payload.Dao.PayloadDao;
 import com.springboot.payload.entity.Load;
 
+@Service
+public class PayloadServiceImpl implements PayloadService {
+	@Autowired
+	PayloadDao payloadDao;
+	public Load createLoading(Load load) {
+		payloadDao.save(load);
+		return load;
+	}
 
-public interface PayloadService {
-	public Load createLoading(Load load);
 
-	
 }

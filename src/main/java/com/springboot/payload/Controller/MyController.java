@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.payload.Dao.PayloadDao;
 import com.springboot.payload.Service.PayloadService;
 import com.springboot.payload.entity.Load;
 
@@ -18,7 +19,8 @@ public class MyController {
 	
 	@PostMapping(value="/createloading")
 	public Load createLoading(@RequestBody Load load) {
-		return payloadService.createLoading(load);
+		//return payloadService.createLoading(load);
+		return this.payloadService.createLoading(load);
 	}
 
 }
